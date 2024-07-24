@@ -5,7 +5,6 @@ authors = []
 telemetry = false
 cache_dir = './.cache'
 requirements = []
-
 [contracts.bonding-curve-dex]
 path = 'contracts/bonding-curve-dex.clar'
 clarity_version = 2
@@ -18,6 +17,16 @@ epoch = 2.5
 
 [contracts.sip-010-trait-ft-standard]
 path = 'contracts/sip-010-trait-ft-standard.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.vuln-bonding-curve-dex]
+path = 'contracts/vuln-bonding-curve-dex.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.vuln-token]
+path = 'contracts/vuln-token.clar'
 clarity_version = 2
 epoch = 2.5
 
