@@ -8,7 +8,7 @@ import { TokenBurning } from "./invariants/TokenBurning";
 import { FeeCollection } from "./invariants/FeeCollection";
 import { TradingEnabled } from "./invariants/TradingEnabled";
 import { BalanceChecks } from "./invariants/BalanceChecks";
-import { ConstantProductInvariant } from "./invariants/ConstantProductInvariant";
+import { ConstantProduct } from "./invariants/ConstantProduct";
 import { Cl } from "@stacks/transactions";
 
 describe("Bonding Curve DEX Invariant Tests", () => {
@@ -44,7 +44,7 @@ describe("Bonding Curve DEX Invariant Tests", () => {
       { name: "FeeCollection", invariant: FeeCollection(accounts) },
       { name: "TradingEnabled", invariant: TradingEnabled(accounts) },
       { name: "BalanceChecks", invariant: BalanceChecks(accounts) },
-      { name: "ConstantProductInvariant", invariant: ConstantProductInvariant(accounts) },
+      { name: "ConstantProduct", invariant: ConstantProduct(accounts) },
     ];
 
     const testStxAmount = 1000000000n; // 1000 STX
@@ -86,10 +86,10 @@ describe("Bonding Curve DEX Invariant Tests", () => {
               invariant.run(model, simnet);
               console.log("TradingEnabled invariant completed");
               break;
-            case 'ConstantProductInvariant':
-              console.log("Current model state before ConstantProductInvariant:", model);
+            case 'ConstantProduct':
+              console.log("Current model state before ConstantProduct:", model);
               invariant.run(model, simnet);
-              console.log("ConstantProductInvariant completed");
+              console.log("ConstantProduct completed");
               break;
             case 'BalanceChecks':
               invariant.run(model, simnet, testAccount, testStxAmount, largeSellAmount);

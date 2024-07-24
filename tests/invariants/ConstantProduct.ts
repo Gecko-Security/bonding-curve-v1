@@ -4,9 +4,9 @@ import { expect } from "vitest";
 
 
 // ensures that constant product formula  (k=x*y) is true
-export const ConstantProductInvariant = (accounts: Map<string, string>) => ({
+export const ConstantProduct = (accounts: Map<string, string>) => ({
   run: (model: Model, real: Simnet) => {
-    console.log("ConstantProductInvariant.run started");
+    console.log("ConstantProduct.run started");
 
     const k = model.tokenBalance * (model.stxBalance + model.virtualStxAmount);
 
@@ -29,6 +29,6 @@ export const ConstantProductInvariant = (accounts: Map<string, string>) => ({
     const tolerance = 1e-6;
     expect(relativeDifference).toBeLessThan(tolerance);
 
-    console.log("ConstantProductInvariant.run completed");
+    console.log("ConstantProduct.run completed");
   },
 });
